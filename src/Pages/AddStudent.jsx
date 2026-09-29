@@ -26,7 +26,7 @@ const AddStudent = () => {
 
        
        try{
-        await API.post("students",student);
+        await API.post("/students",student);
         alert("Student Added Successfully...")
         navigate("/show")
 

@@ -25,7 +25,7 @@ const EditStudent = () => {
     }
 
       async function fetchSingleData(){
-        let res= await API.get(`students/${id}`)
+        let res= await API.get(`/students/${id}`)
 
        setStudent(res.data)
       }
@@ -38,7 +38,7 @@ const EditStudent = () => {
 
    try{
     e.preventDefault()
-     await API.put(`students/${id}`,student)
+     await API.put(`/students/${id}`,student)
      navigate('/show')
    }
    catch(err){

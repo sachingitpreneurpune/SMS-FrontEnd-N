@@ -7,7 +7,7 @@ const StudentList = () => {
     let [student, setStudent] = useState([])
 
     async function fetchData() {
-        let response = await API.get("students");
+        let response = await API.get("/students");
         setStudent(response.data)
 
     }
@@ -22,7 +22,7 @@ const StudentList = () => {
 
          if(confirmDelete){
             try{
-                await API.delete(`students/${id}`)
+                await API.delete(`/students/${id}`)
                 fetchData()
             }
             catch(err){
@@ -35,7 +35,7 @@ const StudentList = () => {
 
     async function handleEdit(id){
         try{
-            await axios.patch(`students/${id}`,{
+            await axios.patch(`/students/${id}`,{
             course:"Updated Course"
         })
         fetchData()
