@@ -35,7 +35,7 @@ const StudentList = () => {
 
     async function handleEdit(id){
         try{
-            await axios.patch(`http://localhost:3000/students/${id}`,{
+            await axios.patch(`students/${id}`,{
             course:"Updated Course"
         })
         fetchData()
